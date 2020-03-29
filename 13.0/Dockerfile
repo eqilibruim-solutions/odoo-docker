@@ -12,8 +12,8 @@ RUN set -x; \
             python3-wheel \
             python3-setuptools \
             python3-pip \
-            # python3.7 \
-            # libpython3.7 \
+            python3.7 \
+            libpython3.7 \
             curl \
             gnupg \
             libpq-dev \
@@ -24,9 +24,9 @@ RUN set -x; \
             libxslt1.1 \
             sudo \
             node-less \
-            # python3-yaml \
+            python3-yaml \
         && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1 \
-        # && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2 \
+        && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2 \
         && update-alternatives --install /usr/bin/python python /usr/bin/python3.6 1 \
         && update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 2 \
         && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb \
